@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "components": [
+    {
+      "id": "BDUI-LAYOUT-001",
+      "name": "Container",
+      "status": "production",
+      "category": "layout"
+    },
+    {
+      "id": "BDUI-LAYOUT-002",
+      "name": "Section",
+      "status": "production",
+      "category": "layout"
+    },
+    {
+      "id": "BDUI-LAYOUT-003",
+      "name": "Grid",
+      "status": "production",
+      "category": "layout"
+    },
+    {
+      "id": "BDUI-ACTION-001",
+      "name": "Button",
+      "status": "production",
+      "category": "actions"
+    }
+  ]
+}
