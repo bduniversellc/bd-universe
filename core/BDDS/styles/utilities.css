@@ -1,0 +1,65 @@
+/*
+====================================================
+BD Universe
+File: utilities.css
+Version: 1.0.0
+====================================================
+*/
+
+.bd-flex {
+
+  display:flex;
+
+}
+
+.bd-flex-center {
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
+.bd-text-center {
+
+  text-align:center;
+
+}
+
+.bd-hidden {
+
+  display:none;
+
+}
+
+.bd-full-height {
+
+  min-height:100vh;
+
+}
+
+.bd-rounded {
+
+  border-radius:var(--bd-radius-md);
+
+}
+
+.bd-shadow {
+
+  box-shadow:var(--bd-shadow-md);
+
+}
+
+.bd-primary {
+
+  color:var(--bd-color-primary);
+
+}
+
+.bd-surface {
+
+  background:var(--bd-color-surface);
+
+}
