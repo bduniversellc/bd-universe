@@ -1,0 +1,46 @@
+/*
+====================================================
+BDUI-LAYOUT-002
+Section
+====================================================
+*/
+
+.bd-section {
+
+    padding-block: var(--bd-space-8);
+
+}
+
+.bd-section-sm {
+
+    padding-block: var(--bd-space-6);
+
+}
+
+.bd-section-lg {
+
+    padding-block: var(--bd-space-9);
+
+}
+
+.bd-section-surface {
+
+    background: var(--bd-color-surface);
+
+}
+
+.bd-section-dark {
+
+    background: var(--bd-color-background);
+
+}
+
+.bd-section-full {
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+}
