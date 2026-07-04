@@ -1,0 +1,13 @@
+{
+  "id": "BDUI-001",
+  "name": "Container",
+  "version": "1.0.0",
+  "status": "production",
+  "purpose": "Provides consistent page width.",
+  "dependencies": [
+    "core/bdds/tokens",
+    "core/bdds/styles"
+  ],
+  "responsive": true,
+  "accessible": true
+}
