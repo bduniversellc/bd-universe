@@ -1,0 +1,67 @@
+/*
+====================================================
+BD Universe
+File: layout.css
+Version: 1.0.0
+====================================================
+*/
+
+.bd-container {
+
+  width: min(100% - 2rem, var(--bd-container-width));
+
+  margin-inline: auto;
+
+}
+
+.bd-reading {
+
+  width: min(100% - 2rem, var(--bd-reading-width));
+
+  margin-inline: auto;
+
+}
+
+.bd-section {
+
+  padding-block: var(--bd-space-8);
+
+}
+
+.bd-grid {
+
+  display: grid;
+
+  gap: var(--bd-space-4);
+
+}
+
+.bd-grid-2 {
+
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.bd-grid-3 {
+
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.bd-grid-4 {
+
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+@media (max-width:768px){
+
+  .bd-grid-2,
+  .bd-grid-3,
+  .bd-grid-4{
+
+      grid-template-columns:1fr;
+
+  }
+
+}
