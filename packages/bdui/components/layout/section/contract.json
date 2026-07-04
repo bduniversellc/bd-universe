@@ -1,0 +1,11 @@
+{
+  "id": "BDUI-LAYOUT-002",
+  "name": "Section",
+  "version": "1.0.0",
+  "status": "production",
+  "purpose": "Creates reusable page sections.",
+  "dependencies": [
+    "BDUI-LAYOUT-001",
+    "BDDS"
+  ]
+}
