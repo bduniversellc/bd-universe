@@ -1,0 +1,79 @@
+/*
+====================================================
+BD Universe
+File: typography.css
+Version: 1.0.0
+====================================================
+*/
+
+body {
+
+  font-family: var(--bd-font-body);
+
+  font-size: var(--bd-text-md);
+
+  color: var(--bd-color-text);
+
+  background: var(--bd-color-background);
+
+  line-height: 1.6;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: var(--bd-font-display);
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+}
+
+h1 {
+
+  font-size: var(--bd-text-4xl);
+
+}
+
+h2 {
+
+  font-size: var(--bd-text-3xl);
+
+}
+
+h3 {
+
+  font-size: var(--bd-text-2xl);
+
+}
+
+h4 {
+
+  font-size: var(--bd-text-xl);
+
+}
+
+p {
+
+  max-width: 70ch;
+
+}
+
+small {
+
+  font-size: var(--bd-text-sm);
+
+}
+
+code,
+pre {
+
+  font-family: var(--bd-font-code);
+
+}
