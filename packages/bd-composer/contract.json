@@ -1,0 +1,33 @@
+{
+    "id": "BDC-001",
+    "name": "BD Composer",
+    "package": "bd-composer",
+    "version": "1.0.0",
+    "status": "development",
+    "owner": "BD Universe LLC",
+
+    "description": "Reusable composition engine for BD Universe applications.",
+
+    "category": "Platform Package",
+
+    "dependencies": [
+        "BDOS",
+        "BDDS",
+        "BDUI"
+    ],
+
+    "modules": [
+        "Composer",
+        "Loader",
+        "Registry",
+        "Router",
+        "Renderer"
+    ],
+
+    "future": [
+        "Templates",
+        "Plugins",
+        "AI",
+        "BrandOS"
+    ]
+}
