@@ -1,0 +1,14 @@
+{
+  "id": "BDUI-CONTENT-001",
+  "name": "Hero",
+  "category": "content",
+  "version": "1.0.0",
+  "status": "development",
+  "responsive": true,
+  "accessible": true,
+  "dependencies": [
+    "BDDS",
+    "Container",
+    "Button"
+  ]
+}
