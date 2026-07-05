@@ -1,0 +1,93 @@
+/*
+====================================================
+BD Universe
+
+BDUI Lab
+
+Version: 1.0.0
+====================================================
+*/
+
+body {
+
+    background: var(--bd-color-background);
+
+    color: var(--bd-color-text);
+
+}
+
+.lab-header {
+
+    padding-block: var(--bd-space-8);
+
+    border-bottom: 1px solid var(--bd-color-surface);
+
+}
+
+.lab-title {
+
+    font-family: var(--bd-font-display);
+
+    font-size: var(--bd-text-3xl);
+
+}
+
+.lab-subtitle {
+
+    color: var(--bd-color-text-secondary);
+
+}
+
+.lab-category {
+
+    margin-top: var(--bd-space-8);
+
+}
+
+.lab-card {
+
+    background: var(--bd-color-surface);
+
+    border-radius: var(--bd-radius-lg);
+
+    padding: var(--bd-space-5);
+
+    box-shadow: var(--bd-shadow-md);
+
+    transition: transform var(--bd-duration-normal);
+
+}
+
+.lab-card:hover {
+
+    transform: translateY(-4px);
+
+}
+
+.lab-status {
+
+    display: inline-block;
+
+    margin-top: var(--bd-space-3);
+
+    font-size: var(--bd-text-sm);
+
+}
+
+.status-production {
+
+    color: var(--bd-color-success);
+
+}
+
+.status-draft {
+
+    color: var(--bd-color-warning);
+
+}
+
+.status-planned {
+
+    color: var(--bd-color-text-secondary);
+
+}
