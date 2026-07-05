@@ -1,0 +1,57 @@
+.bd-hero{
+
+    display:flex;
+
+    align-items:center;
+
+    min-height:90vh;
+
+}
+
+.bd-hero__content{
+
+    max-width:720px;
+
+}
+
+.bd-hero__eyebrow{
+
+    text-transform:uppercase;
+
+    letter-spacing:.2em;
+
+    color:var(--bd-color-primary);
+
+    margin-bottom:1rem;
+
+}
+
+.bd-hero__title{
+
+    font-size:clamp(3rem,8vw,6rem);
+
+    line-height:1.05;
+
+    margin-bottom:2rem;
+
+}
+
+.bd-hero__description{
+
+    font-size:1.2rem;
+
+    max-width:60ch;
+
+    margin-bottom:2.5rem;
+
+}
+
+.bd-hero__actions{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
