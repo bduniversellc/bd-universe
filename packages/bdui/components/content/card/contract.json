@@ -1,0 +1,14 @@
+{
+  "id": "BDUI-CONTENT-003",
+  "name": "Card",
+  "category": "content",
+  "version": "1.0.0",
+  "status": "development",
+  "responsive": true,
+  "accessible": true,
+  "dependencies": [
+    "BDDS",
+    "BDUI-LAYOUT-003",
+    "BDUI-ACTION-001"
+  ]
+}
