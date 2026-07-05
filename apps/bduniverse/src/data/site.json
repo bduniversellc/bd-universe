@@ -1,0 +1,17 @@
+{
+    "site": {
+        "name": "BD Universe",
+        "version": "0.2.0",
+        "tagline": "Build Better. Learn Forever.",
+        "description": "Engineering trusted businesses through systems, design, AI and continuous learning."
+    },
+
+    "navigation": [
+        "Platform",
+        "Blueprints",
+        "Projects",
+        "Knowledge",
+        "Founder",
+        "Contact"
+    ]
+}
