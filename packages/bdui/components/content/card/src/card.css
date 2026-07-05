@@ -1,0 +1,73 @@
+/*
+====================================================
+BD Universe
+
+Component:
+BDUI-CONTENT-003 Card
+
+====================================================
+*/
+
+.bd-card {
+
+    background: var(--bd-color-surface);
+
+    border: 1px solid var(--bd-color-border);
+
+    border-radius: var(--bd-radius-lg);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.bd-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--bd-shadow-lg);
+
+}
+
+.bd-card__body {
+
+    padding: var(--bd-space-6);
+
+}
+
+.bd-card__eyebrow {
+
+    text-transform: uppercase;
+
+    letter-spacing: .18em;
+
+    color: var(--bd-color-primary);
+
+    font-size: var(--bd-text-sm);
+
+    margin-bottom: .75rem;
+
+}
+
+.bd-card__title {
+
+    margin-bottom: 1rem;
+
+}
+
+.bd-card__description {
+
+    margin-bottom: 2rem;
+
+    color: var(--bd-color-text-secondary);
+
+}
+
+.bd-card .bd-button {
+
+    width: fit-content;
+
+}
