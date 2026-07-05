@@ -1,0 +1,35 @@
+.bd-section-header{
+
+    max-width:760px;
+
+    margin-bottom:4rem;
+
+}
+
+.bd-section-header__eyebrow{
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    color:var(--bd-color-primary);
+
+    margin-bottom:.75rem;
+
+    font-weight:600;
+
+}
+
+.bd-section-header__title{
+
+    margin-bottom:1rem;
+
+}
+
+.bd-section-header__description{
+
+    max-width:60ch;
+
+    color:var(--bd-color-text-secondary);
+
+}
