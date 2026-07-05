@@ -1,0 +1,13 @@
+{
+  "id": "BP-001",
+  "name": "Landing Page",
+  "version": "1.0.0",
+  "status": "draft",
+  "components": [
+    "BDUI-NAV-001",
+    "BDUI-CONTENT-001",
+    "BDUI-CONTENT-002",
+    "BDUI-LAYOUT-003",
+    "BDUI-LAYOUT-004"
+  ]
+}
