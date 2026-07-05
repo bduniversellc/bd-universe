@@ -1,0 +1,15 @@
+{
+    "/": "home",
+
+    "/platform": "platform",
+
+    "/blueprints": "blueprints",
+
+    "/projects": "projects",
+
+    "/knowledge": "knowledge",
+
+    "/journal": "journal",
+
+    "/contact": "contact"
+}
