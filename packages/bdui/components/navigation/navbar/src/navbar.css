@@ -1,0 +1,157 @@
+/*
+====================================================
+BD Universe
+
+Component:
+BDUI-NAV-001 Navbar
+
+Version:
+1.0.0
+====================================================
+*/
+
+.bd-navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    background: var(--bd-color-background);
+
+    border-bottom: 1px solid var(--bd-color-surface);
+
+}
+
+.bd-navbar .bd-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 72px;
+
+}
+
+.bd-navbar__brand{
+
+    font-family: var(--bd-font-display);
+
+    font-size: 1.2rem;
+
+    font-weight:700;
+
+}
+
+.bd-navbar__menu{
+
+    display:flex;
+
+    gap:var(--bd-space-5);
+
+    list-style:none;
+
+}
+
+.bd-navbar__menu a{
+
+    position:relative;
+
+    color:var(--bd-color-text);
+
+    font-weight:500;
+
+    transition:color .25s ease;
+
+}
+
+.bd-navbar__menu a:hover{
+
+    color:var(--bd-color-primary);
+
+}
+
+.bd-navbar__menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--bd-color-primary);
+
+    transition:width .25s ease;
+
+}
+
+.bd-navbar__menu a:hover::after{
+
+    width:100%;
+
+}
+
+.bd-navbar__toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:var(--bd-color-text);
+
+    font-size:1.5rem;
+
+}
+
+@media(max-width:768px){
+
+    .bd-navbar__toggle{
+
+        display:block;
+
+    }
+
+    .bd-navbar__menu{
+
+        display:none;
+
+        position:absolute;
+
+        top:72px;
+
+        left:0;
+
+        width:100%;
+
+        flex-direction:column;
+
+        background:var(--bd-color-background);
+
+        padding:2rem;
+
+        border-top:1px solid var(--bd-color-surface);
+
+    }
+
+    .bd-navbar__menu.is-open{
+
+        display:flex;
+
+    }
+
+}
