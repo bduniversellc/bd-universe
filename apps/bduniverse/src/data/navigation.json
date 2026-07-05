@@ -1,0 +1,41 @@
+{
+    "items": [
+
+        {
+            "title": "Platform",
+
+            "url": "/platform"
+        },
+
+        {
+            "title": "Blueprints",
+
+            "url": "/blueprints"
+        },
+
+        {
+            "title": "Projects",
+
+            "url": "/projects"
+        },
+
+        {
+            "title": "Knowledge",
+
+            "url": "/knowledge"
+        },
+
+        {
+            "title": "Founder",
+
+            "url": "/founder"
+        },
+
+        {
+            "title": "Contact",
+
+            "url": "/contact"
+        }
+
+    ]
+}
