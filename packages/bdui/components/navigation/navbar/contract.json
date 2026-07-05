@@ -1,0 +1,17 @@
+{
+  "id": "BDUI-NAV-001",
+  "name": "Navbar",
+  "category": "navigation",
+  "version": "1.0.0",
+  "status": "draft",
+  "author": "BD Universe LLC",
+  "dependencies": [
+    "BDDS",
+    "Design Tokens",
+    "BDUI-ACTION-001 Button"
+  ],
+  "responsive": true,
+  "accessible": true,
+  "darkMode": true,
+  "javascript": true
+}
