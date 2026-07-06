@@ -1,0 +1,15 @@
+{
+    "id": "LAYOUT-001",
+    "name": "Application Layout",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Shared application layout for BD Universe.",
+
+    "regions": [
+        "header",
+        "navigation",
+        "main",
+        "footer"
+    ]
+}
