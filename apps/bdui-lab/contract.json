@@ -1,0 +1,35 @@
+{
+    "id": "APP-002",
+    "name": "BDUI Lab",
+    "application": "BD Universe",
+    "version": "1.0.0",
+    "status": "development",
+    "owner": "BD Universe LLC",
+
+    "category": "Developer Application",
+
+    "description": "Official development environment for the BD Universe Design System.",
+
+    "responsibilities": [
+        "Component Development",
+        "Component Preview",
+        "Documentation",
+        "Testing",
+        "Quality Assurance"
+    ],
+
+    "dependencies": [
+        "BDOS",
+        "BDDS",
+        "BDUI",
+        "BD Composer"
+    ],
+
+    "future": [
+        "Blueprint Explorer",
+        "Theme Explorer",
+        "Design Tokens",
+        "Accessibility",
+        "Performance"
+    ]
+}
