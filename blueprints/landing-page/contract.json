@@ -1,0 +1,16 @@
+{
+    "id": "BP-001",
+    "name": "Landing Page",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Standard landing page blueprint.",
+
+    "pages": [
+        "home"
+    ],
+
+    "layouts": [
+        "default"
+    ]
+}
