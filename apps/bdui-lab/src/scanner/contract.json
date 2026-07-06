@@ -1,0 +1,18 @@
+{
+  "id": "SERVICE-002",
+  "name": "Repository Scanner",
+  "category": "Platform Service",
+  "version": "1.0.0",
+  "status": "development",
+
+  "description": "Discovers engineering artifacts inside BD Universe.",
+
+  "input": [
+    "contract.json"
+  ],
+
+  "output": [
+    "manifest.json",
+    "repository.json"
+  ]
+}
