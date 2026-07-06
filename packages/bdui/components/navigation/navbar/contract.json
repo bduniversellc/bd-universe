@@ -1,0 +1,12 @@
+{
+  "id": "BDUI-NAV-001",
+  "name": "Navbar",
+  "category": "Navigation",
+  "version": "2.0.0",
+  "status": "development",
+  "regions": [
+    "logo",
+    "links",
+    "actions"
+  ]
+}
