@@ -1,0 +1,59 @@
+{
+    "applications": [
+        {
+            "id": "APP-001",
+            "name": "BD Universe"
+        },
+        {
+            "id": "APP-002",
+            "name": "BDUI Lab"
+        }
+    ],
+
+    "packages": [
+        {
+            "id": "PKG-001",
+            "name": "BDOS"
+        },
+        {
+            "id": "PKG-002",
+            "name": "BDDS"
+        },
+        {
+            "id": "PKG-003",
+            "name": "BDUI"
+        },
+        {
+            "id": "PKG-004",
+            "name": "BD Composer"
+        }
+    ],
+
+    "components": [
+        {
+            "id": "BDUI-NAV-001",
+            "name": "Navbar"
+        }
+    ],
+
+    "blueprints": [
+        {
+            "id": "BP-001",
+            "name": "Landing Page"
+        }
+    ],
+
+    "workspaces": [
+        {
+            "id": "WORKSPACE-001",
+            "name": "BD Studio Workspace"
+        }
+    ],
+
+    "standards": [
+        {
+            "id": "BDOS",
+            "name": "BD Operating Standards"
+        }
+    ]
+}
