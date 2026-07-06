@@ -1,0 +1,17 @@
+{
+  "required": [
+    "id",
+    "name",
+    "category",
+    "version",
+    "status",
+    "description"
+  ],
+  "optional": [
+    "owner",
+    "dependencies",
+    "consumers",
+    "future",
+    "tags"
+  ]
+}
