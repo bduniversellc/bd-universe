@@ -1,0 +1,53 @@
+{
+    "id": "APP-002",
+    "name": "BDUI Lab",
+    "displayName": "BD Studio",
+    "type": "Application",
+    "category": "Developer Tools",
+    "version": "1.0.0",
+    "status": "development",
+
+    "owner": {
+        "organization": "BD Universe LLC",
+        "team": "BD Universe Platform"
+    },
+
+    "description": "Official development environment for the BD Universe Design System.",
+
+    "mission": "Build, test, document and publish reusable platform components.",
+
+    "entry": {
+        "layout": "default",
+        "homepage": "/",
+        "applicationShell": true
+    },
+
+    "packages": [
+        "BDOS",
+        "BDDS",
+        "BDUI",
+        "BD Composer"
+    ],
+
+    "features": [
+        "Component Explorer",
+        "Live Preview",
+        "Documentation",
+        "Blueprint Explorer",
+        "Theme Explorer",
+        "Design Tokens",
+        "Accessibility",
+        "Performance"
+    ],
+
+    "future": [
+        "AI Component Generator",
+        "Visual Component Builder",
+        "Component Marketplace",
+        "Plugin System"
+    ],
+
+    "repository": {
+        "folder": "apps/bdui-lab"
+    }
+}
