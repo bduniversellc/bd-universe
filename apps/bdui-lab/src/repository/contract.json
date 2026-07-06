@@ -1,0 +1,30 @@
+{
+    "id": "SERVICE-001",
+    "name": "Repository Service",
+    "category": "Platform Service",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Central metadata service for the BD Universe engineering platform.",
+
+    "resources": [
+        "Applications",
+        "Packages",
+        "Components",
+        "Blueprints",
+        "Workspaces",
+        "Standards"
+    ],
+
+    "consumers": [
+        "Explorer",
+        "BD Composer",
+        "Workspace"
+    ],
+
+    "future": [
+        "GitHub Scanner",
+        "Search",
+        "AI Assistant"
+    ]
+}
