@@ -1,0 +1,16 @@
+{
+    "id": "SERVICE-007",
+    "name": "Settings",
+    "category": "Platform Service",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Central configuration service for BD Kernel.",
+
+    "provides": [
+        "Read",
+        "Write",
+        "Reset",
+        "Defaults"
+    ]
+}
