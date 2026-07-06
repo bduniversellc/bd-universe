@@ -1,0 +1,15 @@
+{
+  "id": "SERVICE-003",
+  "name": "Contract Validator",
+  "category": "Platform Service",
+  "version": "1.0.0",
+  "status": "development",
+  "description": "Validates BD Universe contract files against the universal schema.",
+  "consumers": [
+    "Repository Scanner",
+    "Repository Service",
+    "Composer",
+    "Explorer",
+    "Dashboard"
+  ]
+}
