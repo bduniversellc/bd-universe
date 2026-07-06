@@ -1,0 +1,36 @@
+{
+    "id": "KERNEL-001",
+    "name": "BD Kernel",
+    "category": "Platform Core",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Core runtime of the BD Universe platform.",
+
+    "services": [
+        "Registry",
+        "Events",
+        "Logger",
+        "Settings",
+        "Lifecycle"
+    ],
+
+    "dependencies": [
+
+    ],
+
+    "consumers": [
+        "BD Composer",
+        "Repository Service",
+        "Explorer",
+        "Workspace",
+        "Applications"
+    ],
+
+    "future": [
+        "Diagnostics",
+        "Plugins",
+        "Cloud Runtime",
+        "AI Services"
+    ]
+}
