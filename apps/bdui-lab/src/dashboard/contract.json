@@ -1,0 +1,23 @@
+{
+    "id": "DASHBOARD-001",
+    "name": "Dashboard",
+    "category": "Workspace",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Home screen of BD Studio.",
+
+    "widgets": [
+        "Repository Overview",
+        "Applications",
+        "Packages",
+        "Components",
+        "Blueprints",
+        "Recent Activity"
+    ],
+
+    "dependencies": [
+        "Repository Service",
+        "Explorer"
+    ]
+}
