@@ -1,0 +1,16 @@
+{
+    "id": "SERVICE-006",
+    "name": "Logger",
+    "category": "Platform Service",
+    "version": "1.0.0",
+    "status": "development",
+
+    "description": "Central logging service for BD Kernel.",
+
+    "provides": [
+        "Information",
+        "Warning",
+        "Error",
+        "History"
+    ]
+}
