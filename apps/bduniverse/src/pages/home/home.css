@@ -1,0 +1,81 @@
+/*
+====================================================
+
+BD Universe
+
+Home Page
+
+====================================================
+*/
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:Arial, Helvetica, sans-serif;
+
+line-height:1.6;
+
+padding:40px;
+
+max-width:1100px;
+
+margin:auto;
+
+}
+
+.hero{
+
+padding:100px 0;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:4rem;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:1.4rem;
+
+margin-bottom:30px;
+
+}
+
+.hero a{
+
+display:inline-block;
+
+padding:14px 28px;
+
+text-decoration:none;
+
+border:1px solid black;
+
+}
+
+section{
+
+margin:80px 0;
+
+}
+
+section h2{
+
+margin-bottom:20px;
+
+}
