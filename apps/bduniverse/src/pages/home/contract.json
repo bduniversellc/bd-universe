@@ -1,0 +1,15 @@
+{
+    "id": "PAGE-001",
+    "name": "Home",
+    "application": "BD Universe",
+    "version": "1.0.0",
+    "status": "development",
+
+    "layout": "default",
+
+    "blueprint": "landing-page",
+
+    "title": "BD Universe",
+
+    "description": "The official homepage of the BD Universe platform."
+}
