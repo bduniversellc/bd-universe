@@ -1,0 +1,14 @@
+{
+    "id": "SERVICE-005",
+    "name": "Event Bus",
+    "category": "Platform Service",
+    "version": "1.0.0",
+    "status": "development",
+    "description": "Platform-wide communication service for BD Kernel.",
+
+    "provides": [
+        "Publish",
+        "Subscribe",
+        "Unsubscribe"
+    ]
+}
