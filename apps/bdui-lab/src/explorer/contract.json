@@ -1,0 +1,15 @@
+{
+    "id": "WORKSPACE-001",
+    "name": "BD Studio Workspace",
+    "version": "1.0.0",
+    "status": "development",
+
+    "regions": [
+        "header",
+        "sidebar",
+        "content",
+        "footer"
+    ],
+
+    "responsive": true
+}
