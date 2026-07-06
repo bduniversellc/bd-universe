@@ -1,0 +1,17 @@
+{
+    "page": "home",
+
+    "layout": "default",
+
+    "sections": [
+
+        "navbar",
+
+        "hero",
+
+        "features",
+
+        "footer"
+
+    ]
+}
