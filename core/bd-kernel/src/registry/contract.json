@@ -1,0 +1,8 @@
+{
+  "id": "SERVICE-004",
+  "name": "Service Registry",
+  "category": "Platform Service",
+  "version": "1.0.0",
+  "status": "development",
+  "description": "Central registry for BD Kernel platform services."
+}
