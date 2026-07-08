@@ -1,25 +1,10 @@
-/*
-====================================================
-
-BD Studio
-
-Application Bootstrap
-
-====================================================
-*/
-
 console.clear();
 
-console.log("======================================");
-
+console.log("================================");
 console.log("BD Studio Alpha");
+console.log("Application Started");
+console.log("================================");
 
-console.log("Version 0.1.0");
-
-console.log("======================================");
-
-const status = document.querySelector(".statusbar");
-
-status.children[1].textContent = "Kernel: Ready";
-
-console.log("Application Loaded");
+document
+    .getElementById("kernel-status")
+    .textContent = "Kernel: Ready";
