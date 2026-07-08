@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>BD Studio</title>
 
@@ -15,46 +16,66 @@
 
 <body>
 
-    <div id="app">
+<div id="app">
 
-        <header class="topbar">
+    <header class="topbar">
 
-            <div class="logo">
+        <div class="brand">
 
-                <strong>BD Studio</strong>
+            <strong>BD Studio</strong>
 
-                <span>Alpha</span>
+            <span>Alpha</span>
 
-            </div>
+        </div>
 
-        </header>
+    </header>
 
-        <main id="content">
+    <div class="workspace">
 
-            <div class="welcome">
+        <aside class="sidebar">
 
-                <h1>Welcome to BD Studio Alpha</h1>
+            <button>📊 Dashboard</button>
 
-                <p>
-                    Build Better.
-                    Learn Forever.
-                </p>
+            <button>📂 Explorer</button>
 
-            </div>
+            <button>📦 Packages</button>
+
+            <button>🧩 Components</button>
+
+            <button>📐 Blueprints</button>
+
+            <button>📚 Documentation</button>
+
+            <button>⚙ Settings</button>
+
+        </aside>
+
+        <main class="content">
+
+            <h1>Welcome to BD Studio</h1>
+
+            <p>
+
+                Your operating system for building better brands,
+                products and businesses.
+
+            </p>
 
         </main>
 
-        <footer class="statusbar">
-
-            <span>Status: Ready</span>
-
-            <span>Kernel: Loading...</span>
-
-        </footer>
-
     </div>
 
-    <script type="module" src="./app.js"></script>
+    <footer class="statusbar">
+
+        <span>Status: Ready</span>
+
+        <span id="kernel-status">Kernel: Loading...</span>
+
+    </footer>
+
+</div>
+
+<script type="module" src="./app.js"></script>
 
 </body>
 
