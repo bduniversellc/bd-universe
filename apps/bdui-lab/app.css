@@ -1,61 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+*{
 
-<head>
+margin:0;
+padding:0;
+box-sizing:border-box;
 
-    <meta charset="UTF-8">
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+body{
 
-    <title>BD Studio</title>
+font-family:Arial,Helvetica,sans-serif;
+background:#eef2f5;
 
-    <link rel="stylesheet" href="./app.css">
+}
 
-</head>
+#app{
 
-<body>
+height:100vh;
 
-    <div id="app">
+display:grid;
 
-        <header class="topbar">
+grid-template-rows:60px 1fr 30px;
 
-            <div class="logo">
+}
 
-                <strong>BD Studio</strong>
+.topbar{
 
-                <span>Alpha</span>
+background:#111827;
 
-            </div>
+color:white;
 
-        </header>
+display:flex;
 
-        <main id="content">
+align-items:center;
 
-            <div class="welcome">
+padding:0 24px;
 
-                <h1>Welcome to BD Studio</h1>
+}
 
-                <p>
-                    Build Better.
-                    Learn Forever.
-                </p>
+.brand{
 
-            </div>
+display:flex;
 
-        </main>
+gap:10px;
 
-        <footer class="statusbar">
+align-items:center;
 
-            <span>Status: Ready</span>
+}
 
-            <span>Kernel: Loading...</span>
+.brand span{
 
-        </footer>
+color:#60a5fa;
 
-    </div>
+}
 
-    <script type="module" src="./app.js"></script>
+.workspace{
 
-</body>
+display:grid;
 
-</html>
+grid-template-columns:240px 1fr;
+
+height:100%;
+
+}
+
+.sidebar{
+
+background:#1f2937;
+
+padding:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.sidebar button{
+
+border:none;
+
+padding:12px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+text-align:left;
+
+background:#374151;
+
+color:white;
+
+transition:.2s;
+
+}
+
+.sidebar button:hover{
+
+background:#4b5563;
+
+}
+
+.content{
+
+padding:40px;
+
+background:white;
+
+overflow:auto;
+
+}
+
+.content h1{
+
+margin-bottom:20px;
+
+}
+
+.statusbar{
+
+background:#111827;
+
+color:white;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 20px;
+
+font-size:12px;
+
+}
