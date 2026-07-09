@@ -123,6 +123,21 @@ function show(view){
 
     content.innerHTML = views[view];
 
+    if(view === "explorer"){
+
+        const tree =
+            document.getElementById("repository-tree");
+
+        repository.forEach(folder=>{
+
+            tree.innerHTML += `
+                <div>📂 ${folder}</div>
+            `;
+
+        });
+
+    }
+
 }
 
 /*
