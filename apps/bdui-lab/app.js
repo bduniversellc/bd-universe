@@ -34,12 +34,37 @@ const views = {
         </p>
     `,
 
-    explorer: `
-        <h1>Explorer</h1>
+  explorer: `
 
-        <p>
-            Browse the BD Universe repository.
-        </p>
+<h1>Repository Explorer</h1>
+
+<div class="repo">
+
+<div>📂 apps</div>
+
+<div style="margin-left:24px;">📂 bdui-lab</div>
+
+<div style="margin-left:24px;">📂 bduniverse</div>
+
+<br>
+
+<div>📂 core</div>
+
+<div>📂 packages</div>
+
+<div>📂 blueprints</div>
+
+<div>📂 docs</div>
+
+<div>📂 knowledge</div>
+
+<div>📂 tests</div>
+
+<div>📂 tools</div>
+
+</div>
+
+`,
     `,
 
     packages: `
