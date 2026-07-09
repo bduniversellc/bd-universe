@@ -229,6 +229,7 @@ function show(view){
         `;
 
     }
+        
 function toggleFolder(name){
 
     const folder =
