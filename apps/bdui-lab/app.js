@@ -2,7 +2,6 @@
 ======================================
 
 BD Studio
-
 Application
 
 ======================================
@@ -12,9 +11,7 @@ console.clear();
 
 console.log("BD Studio Alpha");
 
-document
-    .getElementById("kernel-status")
-    .textContent = "Kernel: Ready";
+document.getElementById("kernel-status").textContent = "Kernel: Ready";
 
 /*
 ======================================
@@ -26,115 +23,43 @@ Views
 
 const views = {
 
-   dashboard: `
+    dashboard: `
+        <h1>Repository Dashboard</h1>
+        <div id="dashboard"></div>
+    `,
 
-<h1>Repository Dashboard</h1>
-
-<div id="dashboard"></div>
-
-`,
-
- explorer: `
-
-<h1>Repository Explorer</h1>
-
-<div id="repository-tree"></div>
-
-`,
-
-
-    {
-
-        name: "packages",
-
-        children: []
-
-    },
-
-    {
-
-        name: "blueprints",
-
-        children: []
-
-    },
-
-    {
-
-        name: "docs",
-
-        children: []
-
-    },
-
-    {
-
-        name: "knowledge",
-
-        children: []
-
-    },
-
-    {
-
-        name: "tests",
-
-        children: []
-
-    },
-
-    {
-
-        name: "tools",
-
-        children: []
-
-    }
-
-];
-
+    explorer: `
+        <h1>Repository Explorer</h1>
+        <div id="repository-tree"></div>
+    `,
 
     packages: `
         <h1>Packages</h1>
-
-        <p>
-            Browse reusable packages.
-        </p>
+        <p>Browse reusable packages.</p>
     `,
 
     components: `
         <h1>Components</h1>
-
-        <p>
-            Build and manage reusable UI components.
-        </p>
+        <p>Build and manage reusable UI components.</p>
     `,
 
     blueprints: `
         <h1>Blueprints</h1>
-
-        <p>
-            Explore architecture and project blueprints.
-        </p>
+        <p>Explore architecture and project blueprints.</p>
     `,
 
     documentation: `
         <h1>Documentation</h1>
-
-        <p>
-            Read project documentation.
-        </p>
+        <p>Read project documentation.</p>
     `,
 
     settings: `
         <h1>Settings</h1>
-
-        <p>
-            Configure BD Studio preferences.
-        </p>
+        <p>Configure BD Studio preferences.</p>
     `
 
 };
+
 /*
 ======================================
 
@@ -145,32 +70,56 @@ Repository
 
 const repository = [
 
-    "apps",
+    {
+        name: "apps",
+        children: [
+            "bdui-lab",
+            "bduniverse"
+        ]
+    },
 
-    "core",
+    {
+        name: "core",
+        children: [
+            "bd-kernel",
+            "services"
+        ]
+    },
 
-    "packages",
+    {
+        name: "packages",
+        children: [
+            "bdui"
+        ]
+    },
 
-    "blueprints",
+    {
+        name: "blueprints",
+        children: []
+    },
 
-    "docs",
+    {
+        name: "docs",
+        children: []
+    },
 
-    "knowledge",
+    {
+        name: "knowledge",
+        children: []
+    },
 
-    "tests",
+    {
+        name: "tests",
+        children: []
+    },
 
-    "tools"
+    {
+        name: "tools",
+        children: []
+    }
 
 ];
-/*
-======================================
 
-Renderer
-
-======================================
-*/
-
-const content = document.getElementById("content");
 /*
 ======================================
 
@@ -182,85 +131,112 @@ Repository Statistics
 const statistics = {
 
     applications: 2,
-
-    core: 3,
-
-    packages: 6,
-
+    core: 2,
+    packages: 1,
     blueprints: 5,
-
     status: "Healthy",
-
     version: "Alpha 0.7"
 
 };
-function show(view){
+
+/*
+======================================
+
+Renderer
+
+======================================
+*/
+
+const content = document.getElementById("content");
+
+function show(view) {
 
     content.innerHTML = views[view];
 
-    if(view === "dashboard"){
+    if (view === "dashboard") {
 
-        const dashboard =
-            document.getElementById("dashboard");
+        const dashboard = document.getElementById("dashboard");
 
         dashboard.innerHTML = `
-
             <p><strong>Applications:</strong> ${statistics.applications}</p>
-
             <p><strong>Core Modules:</strong> ${statistics.core}</p>
-
             <p><strong>Packages:</strong> ${statistics.packages}</p>
-
             <p><strong>Blueprints:</strong> ${statistics.blueprints}</p>
-
             <p><strong>Status:</strong> ${statistics.status}</p>
-
             <p><strong>Version:</strong> ${statistics.version}</p>
-
         `;
 
     }
 
-function toggleFolder(name){
+    if (view === "explorer") {
 
-    const folder =
-        repository.find(item => item.name === name);
+        const tree = document.getElementById("repository-tree");
 
-    const children =
-        document.getElementById(name);
+        repository.forEach(folder => {
 
-    if(children.style.display === "none"){
+            tree.innerHTML += `
+                <div class="folder">
 
-        children.style.display = "block";
+                    <div
+                        class="folder-name"
+                        onclick="toggleFolder('${folder.name}')"
+                        style="cursor:pointer; font-weight:bold; margin:6px 0;">
 
-        children.innerHTML = "";
+                        ▶ ${folder.name}
 
-        folder.children.forEach(child=>{
+                    </div>
 
-            children.innerHTML += `
-                <div>📂 ${child}</div>
+                    <div
+                        id="${folder.name}"
+                        class="children"
+                        style="display:none; margin-left:20px;">
+
+                    </div>
+
+                </div>
             `;
 
         });
 
     }
 
-    else{
+}
+
+/*
+======================================
+
+Folder Toggle
+
+======================================
+*/
+
+function toggleFolder(name) {
+
+    const folder = repository.find(item => item.name === name);
+
+    const children = document.getElementById(name);
+
+    if (children.style.display === "none") {
+
+        children.style.display = "block";
+
+        children.innerHTML = "";
+
+        folder.children.forEach(child => {
+
+            children.innerHTML += `
+                <div style="margin:4px 0;">
+                    📂 ${child}
+                </div>
+            `;
+
+        });
+
+    } else {
 
         children.style.display = "none";
 
-    }
-
-}
-    if(view === "explorer"){
-
-      explorer: `
-
-<h1>Repository Explorer</h1>
-
-<div id="repository-tree"></div>
-
-`,
+        children.innerHTML = "";
 
     }
 
