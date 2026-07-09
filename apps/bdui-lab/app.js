@@ -35,21 +35,12 @@ const views = {
 `,
 
  explorer: `
-   const repository = [
 
-    {
+<h1>Repository Explorer</h1>
 
-        name: "apps",
+<div id="repository-tree"></div>
 
-        children: [
-
-            "bdui-lab",
-
-            "bduniverse"
-
-        ]
-
-    },
+`,
 
 
     {
@@ -229,7 +220,7 @@ function show(view){
         `;
 
     }
-        
+
 function toggleFolder(name){
 
     const folder =
