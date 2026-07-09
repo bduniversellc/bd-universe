@@ -242,11 +242,32 @@ function show(view){
         const tree =
             document.getElementById("repository-tree");
 
-        repository.forEach(folder=>{
+   repository.forEach(folder=>{
 
-            tree.innerHTML += `<div>📂 ${folder}</div>`;
+    tree.innerHTML += `
 
-        });
+        <div class="folder">
+
+            <div
+                class="folder-name"
+                onclick="toggleFolder('${folder.name}')">
+
+                ▶ ${folder.name}
+
+            </div>
+
+            <div
+                id="${folder.name}"
+                class="children"
+                style="display:none; margin-left:20px;">
+
+            </div>
+
+        </div>
+
+    `;
+
+});
 
     }
 
