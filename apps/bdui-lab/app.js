@@ -236,7 +236,37 @@ function show(view){
         `;
 
     }
+function toggleFolder(name){
 
+    const folder =
+        repository.find(item => item.name === name);
+
+    const children =
+        document.getElementById(name);
+
+    if(children.style.display === "none"){
+
+        children.style.display = "block";
+
+        children.innerHTML = "";
+
+        folder.children.forEach(child=>{
+
+            children.innerHTML += `
+                <div>📂 ${child}</div>
+            `;
+
+        });
+
+    }
+
+    else{
+
+        children.style.display = "none";
+
+    }
+
+}
     if(view === "explorer"){
 
         const tree =
