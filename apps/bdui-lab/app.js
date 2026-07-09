@@ -65,7 +65,7 @@ const views = {
 </div>
 
 `,
-    `,
+
 
     packages: `
         <h1>Packages</h1>
