@@ -269,35 +269,13 @@ function toggleFolder(name){
 }
     if(view === "explorer"){
 
-        const tree =
-            document.getElementById("repository-tree");
+      explorer: `
 
-   repository.forEach(folder=>{
+<h1>Repository Explorer</h1>
 
-    tree.innerHTML += `
+<div id="repository-tree"></div>
 
-        <div class="folder">
-
-            <div
-                class="folder-name"
-                onclick="toggleFolder('${folder.name}')">
-
-                ▶ ${folder.name}
-
-            </div>
-
-            <div
-                id="${folder.name}"
-                class="children"
-                style="display:none; margin-left:20px;">
-
-            </div>
-
-        </div>
-
-    `;
-
-});
+`,
 
     }
 
