@@ -71,8 +71,41 @@ const views = {
             Read project documentation.
 
         </p>
+components: `
 
-    `
+    <h1>Components</h1>
+
+    <p>
+
+        Build and manage reusable UI components.
+
+    </p>
+
+`,
+
+blueprints: `
+
+    <h1>Blueprints</h1>
+
+    <p>
+
+        Explore architecture and project blueprints.
+
+    </p>
+
+`,
+
+settings: `
+
+    <h1>Settings</h1>
+
+    <p>
+
+        Configure BD Studio preferences.
+
+    </p>
+
+`,    `
 
 };
 
