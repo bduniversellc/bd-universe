@@ -82,7 +82,33 @@ const views = {
     `
 
 };
+/*
+======================================
 
+Repository
+
+======================================
+*/
+
+const repository = [
+
+    "apps",
+
+    "core",
+
+    "packages",
+
+    "blueprints",
+
+    "docs",
+
+    "knowledge",
+
+    "tests",
+
+    "tools"
+
+];
 /*
 ======================================
 
