@@ -51,13 +51,6 @@ const views = {
 
     },
 
-    {
-
-        name: "core",
-
-        children: []
-
-    },
 
     {
 
