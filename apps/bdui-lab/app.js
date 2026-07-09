@@ -145,6 +145,29 @@ function show(view){
 
     content.innerHTML = views[view];
 
+    if(view === "dashboard"){
+
+        const dashboard =
+            document.getElementById("dashboard");
+
+        dashboard.innerHTML = `
+
+            <p><strong>Applications:</strong> ${statistics.applications}</p>
+
+            <p><strong>Core Modules:</strong> ${statistics.core}</p>
+
+            <p><strong>Packages:</strong> ${statistics.packages}</p>
+
+            <p><strong>Blueprints:</strong> ${statistics.blueprints}</p>
+
+            <p><strong>Status:</strong> ${statistics.status}</p>
+
+            <p><strong>Version:</strong> ${statistics.version}</p>
+
+        `;
+
+    }
+
     if(view === "explorer"){
 
         const tree =
@@ -152,9 +175,7 @@ function show(view){
 
         repository.forEach(folder=>{
 
-            tree.innerHTML += `
-                <div>📂 ${folder}</div>
-            `;
+            tree.innerHTML += `<div>📂 ${folder}</div>`;
 
         });
 
