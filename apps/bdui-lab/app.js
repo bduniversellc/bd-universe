@@ -26,13 +26,13 @@ Views
 
 const views = {
 
-    dashboard: `
-        <h1>Dashboard</h1>
+   dashboard: `
 
-        <p>
-            Welcome to BD Studio.
-        </p>
-    `,
+<h1>Repository Dashboard</h1>
+
+<div id="dashboard"></div>
+
+`,
 
  explorer: `
     <h1>Repository Explorer</h1>
