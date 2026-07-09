@@ -136,12 +136,12 @@ Navigation
 const buttons = document.querySelectorAll(".sidebar button");
 
 buttons[0].onclick = () => show("dashboard");
-
 buttons[1].onclick = () => show("explorer");
-
 buttons[2].onclick = () => show("packages");
-
+buttons[3].onclick = () => show("components");
+buttons[4].onclick = () => show("blueprints");
 buttons[5].onclick = () => show("documentation");
+buttons[6].onclick = () => show("settings");
 
 /*
 ======================================
