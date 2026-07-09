@@ -118,7 +118,29 @@ Renderer
 */
 
 const content = document.getElementById("content");
+/*
+======================================
 
+Repository Statistics
+
+======================================
+*/
+
+const statistics = {
+
+    applications: 2,
+
+    core: 3,
+
+    packages: 6,
+
+    blueprints: 5,
+
+    status: "Healthy",
+
+    version: "Alpha 0.7"
+
+};
 function show(view){
 
     content.innerHTML = views[view];
