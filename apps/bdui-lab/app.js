@@ -35,10 +35,79 @@ const views = {
 `,
 
  explorer: `
-    <h1>Repository Explorer</h1>
+   const repository = [
 
-    <div id="repository-tree"></div>
-`,
+    {
+
+        name: "apps",
+
+        children: [
+
+            "bdui-lab",
+
+            "bduniverse"
+
+        ]
+
+    },
+
+    {
+
+        name: "core",
+
+        children: []
+
+    },
+
+    {
+
+        name: "packages",
+
+        children: []
+
+    },
+
+    {
+
+        name: "blueprints",
+
+        children: []
+
+    },
+
+    {
+
+        name: "docs",
+
+        children: []
+
+    },
+
+    {
+
+        name: "knowledge",
+
+        children: []
+
+    },
+
+    {
+
+        name: "tests",
+
+        children: []
+
+    },
+
+    {
+
+        name: "tools",
+
+        children: []
+
+    }
+
+];
 
 
     packages: `
