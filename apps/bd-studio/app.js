@@ -242,6 +242,8 @@ function toggleFolder(name) {
 
 }
 
+window.toggleFolder = toggleFolder;
+
 /*
 ======================================
 
