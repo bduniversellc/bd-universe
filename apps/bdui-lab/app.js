@@ -34,36 +34,10 @@ const views = {
         </p>
     `,
 
-  explorer: `
+ explorer: `
+    <h1>Repository Explorer</h1>
 
-<h1>Repository Explorer</h1>
-
-<div class="repo">
-
-<div>📂 apps</div>
-
-<div style="margin-left:24px;">📂 bdui-lab</div>
-
-<div style="margin-left:24px;">📂 bduniverse</div>
-
-<br>
-
-<div>📂 core</div>
-
-<div>📂 packages</div>
-
-<div>📂 blueprints</div>
-
-<div>📂 docs</div>
-
-<div>📂 knowledge</div>
-
-<div>📂 tests</div>
-
-<div>📂 tools</div>
-
-</div>
-
+    <div id="repository-tree"></div>
 `,
 
 
