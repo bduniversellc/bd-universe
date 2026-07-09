@@ -27,85 +27,60 @@ Views
 const views = {
 
     dashboard: `
-
         <h1>Dashboard</h1>
 
         <p>
-
             Welcome to BD Studio.
-
         </p>
-
     `,
 
     explorer: `
-
         <h1>Explorer</h1>
 
         <p>
-
             Browse the BD Universe repository.
-
         </p>
-
     `,
 
     packages: `
-
         <h1>Packages</h1>
 
         <p>
-
             Browse reusable packages.
-
         </p>
+    `,
 
+    components: `
+        <h1>Components</h1>
+
+        <p>
+            Build and manage reusable UI components.
+        </p>
+    `,
+
+    blueprints: `
+        <h1>Blueprints</h1>
+
+        <p>
+            Explore architecture and project blueprints.
+        </p>
     `,
 
     documentation: `
-
         <h1>Documentation</h1>
 
         <p>
-
             Read project documentation.
-
         </p>
-components: `
+    `,
 
-    <h1>Components</h1>
+    settings: `
+        <h1>Settings</h1>
 
-    <p>
-
-        Build and manage reusable UI components.
-
-    </p>
-
-`,
-
-blueprints: `
-
-    <h1>Blueprints</h1>
-
-    <p>
-
-        Explore architecture and project blueprints.
-
-    </p>
-
-`,
-
-settings: `
-
-    <h1>Settings</h1>
-
-    <p>
-
-        Configure BD Studio preferences.
-
-    </p>
-
-`,    `
+        <p>
+            Configure BD Studio preferences.
+        </p>
+    `
 
 };
 
