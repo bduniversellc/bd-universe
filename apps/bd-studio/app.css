@@ -1,138 +1,260 @@
+/*
+======================================
+
+BD Studio
+Professional Theme
+
+Version 0.8.0
+
+======================================
+*/
+
 *{
 
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
 
 }
 
 body{
 
-font-family:Arial,Helvetica,sans-serif;
-background:#eef2f5;
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#111827;
+
+    color:#f3f4f6;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
 
 }
 
-#app{
+/*
+======================================
 
-height:100vh;
+Top Bar
 
-display:grid;
-
-grid-template-rows:60px 1fr 30px;
-
-}
+======================================
+*/
 
 .topbar{
 
-background:#111827;
+    height:56px;
 
-color:white;
+    background:#1f2937;
 
-display:flex;
+    border-bottom:1px solid #374151;
 
-align-items:center;
+    display:flex;
 
-padding:0 24px;
+    justify-content:space-between;
 
-}
+    align-items:center;
 
-.brand{
-
-display:flex;
-
-gap:10px;
-
-align-items:center;
+    padding:0 24px;
 
 }
 
-.brand span{
+.logo{
 
-color:#60a5fa;
+    font-size:18px;
+
+    font-weight:700;
 
 }
+
+.version{
+
+    color:#9ca3af;
+
+    font-size:14px;
+
+}
+
+/*
+======================================
+
+Workspace
+
+======================================
+*/
 
 .workspace{
 
-display:grid;
+    flex:1;
 
-grid-template-columns:240px 1fr;
+    display:flex;
 
-height:100%;
+    overflow:hidden;
 
 }
 
+/*
+======================================
+
+Sidebar
+
+======================================
+*/
+
 .sidebar{
 
-background:#1f2937;
+    width:240px;
 
-padding:20px;
+    background:#1f2937;
 
-display:flex;
+    border-right:1px solid #374151;
 
-flex-direction:column;
+    display:flex;
 
-gap:12px;
+    flex-direction:column;
+
+    padding:20px;
+
+    gap:10px;
 
 }
 
 .sidebar button{
 
-border:none;
+    background:transparent;
 
-padding:12px;
+    border:none;
 
-border-radius:8px;
+    color:#d1d5db;
 
-cursor:pointer;
+    text-align:left;
 
-text-align:left;
+    padding:12px;
 
-background:#374151;
+    border-radius:8px;
 
-color:white;
+    cursor:pointer;
 
-transition:.2s;
+    transition:.2s;
+
+    font-size:15px;
 
 }
 
 .sidebar button:hover{
 
-background:#4b5563;
+    background:#374151;
 
 }
 
+.sidebar button.active{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/*
+======================================
+
+Content
+
+======================================
+*/
+
 .content{
 
-padding:40px;
+    flex:1;
 
-background:white;
+    padding:32px;
 
-overflow:auto;
+    overflow:auto;
 
 }
 
 .content h1{
 
-margin-bottom:20px;
+    margin-bottom:18px;
 
 }
 
+.content p{
+
+    margin-bottom:12px;
+
+    line-height:1.6;
+
+}
+
+/*
+======================================
+
+Explorer
+
+======================================
+*/
+
+.folder{
+
+    margin-bottom:8px;
+
+}
+
+.folder-name{
+
+    cursor:pointer;
+
+    padding:6px 10px;
+
+    border-radius:6px;
+
+}
+
+.folder-name:hover{
+
+    background:#374151;
+
+}
+
+.children{
+
+    margin-top:6px;
+
+    margin-left:24px;
+
+}
+
+/*
+======================================
+
+Status Bar
+
+======================================
+*/
+
 .statusbar{
 
-background:#111827;
+    height:34px;
 
-color:white;
+    background:#1f2937;
 
-display:flex;
+    border-top:1px solid #374151;
 
-justify-content:space-between;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-padding:0 20px;
+    padding:0 20px;
 
-font-size:12px;
+    color:#9ca3af;
+
+    font-size:13px;
 
 }
