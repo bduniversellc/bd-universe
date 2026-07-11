@@ -5,71 +5,96 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>BD Studio</title>
 
-    <link rel="stylesheet" href="./app.css">
+    <link
+        rel="stylesheet"
+        href="./app.css">
 
 </head>
 
 <body>
 
-<div id="app">
+    <!-- ======================================
+         Header
+    ======================================= -->
 
     <header class="topbar">
 
-        <div class="brand">
+        <div class="logo">
 
-            <strong>BD Studio</strong>
+            BD Studio
 
-            <span>Alpha</span>
+        </div>
+
+        <div
+            class="version"
+            id="app-version">
+
+            v0.8.0
 
         </div>
 
     </header>
 
+    <!-- ======================================
+         Workspace
+    ======================================= -->
+
     <div class="workspace">
+
+        <!-- Sidebar -->
 
         <aside class="sidebar">
 
-            <button>📊 Dashboard</button>
+            <button>Dashboard</button>
 
-            <button>📂 Explorer</button>
+            <button>Explorer</button>
 
-            <button>📦 Packages</button>
+            <button>Packages</button>
 
-            <button>🧩 Components</button>
+            <button>Components</button>
 
-            <button>📐 Blueprints</button>
+            <button>Blueprints</button>
 
-            <button>📚 Documentation</button>
+            <button>Documentation</button>
 
-            <button>⚙ Settings</button>
+            <button>Settings</button>
 
         </aside>
 
-  <main
-    class="content"
-    id="content">
+        <!-- Content -->
 
-</main>
+        <main
+            class="content"
+            id="content">
+
+        </main>
 
     </div>
 
+    <!-- ======================================
+         Status Bar
+    ======================================= -->
+
     <footer class="statusbar">
 
-        <span>Status: Ready</span>
+        <span id="kernel-status">
 
-        <span id="kernel-status">Kernel: Loading...</span>
+            Kernel: Starting...
+
+        </span>
 
     </footer>
 
-</div>
-
-<script type="module" src="./app.js"></script>
+    <script
+        type="module"
+        src="./app.js"></script>
 
 </body>
 
-</html> 
+</html>
