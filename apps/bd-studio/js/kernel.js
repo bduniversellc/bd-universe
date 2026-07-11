@@ -4,7 +4,7 @@
 BD Studio
 Kernel
 
-Version 0.9.0
+Version 0.9.2
 
 ======================================
 */
@@ -23,6 +23,8 @@ export const Kernel = {
 
     },
 
+    modules: {},
+
     initialize() {
 
         console.log("======================================");
@@ -32,6 +34,20 @@ export const Kernel = {
         console.log("======================================");
 
         this.state.initialized = true;
+
+    },
+
+    register(name, module) {
+
+        this.modules[name] = module;
+
+        console.log("Module Registered:", name);
+
+    },
+
+    getModule(name) {
+
+        return this.modules[name];
 
     },
 
