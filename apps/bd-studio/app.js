@@ -4,14 +4,32 @@
 BD Studio
 Application
 
+Version 0.8.0
+
 ======================================
 */
 
 console.clear();
 
-console.log("BD Studio Alpha");
+console.log("BD Studio v0.8.0");
 
-document.getElementById("kernel-status").textContent = "Kernel: Ready";
+/*
+======================================
+
+Application
+
+======================================
+*/
+
+const APP = {
+
+    name: "BD Studio",
+
+    version: "0.8.0",
+
+    status: "Kernel: Ready"
+
+};
 
 /*
 ======================================
@@ -24,38 +42,61 @@ Views
 const views = {
 
     dashboard: `
-        <h1>Repository Dashboard</h1>
-        <div id="dashboard"></div>
+        <h1>Dashboard</h1>
+
+        <p>
+            Welcome to BD Studio.
+        </p>
+
+        <p>
+            Production Release 0.8.0
+        </p>
     `,
 
     explorer: `
         <h1>Repository Explorer</h1>
+
         <div id="repository-tree"></div>
     `,
 
     packages: `
         <h1>Packages</h1>
-        <p>Browse reusable packages.</p>
+
+        <p>
+            Package Manager coming soon.
+        </p>
     `,
 
     components: `
         <h1>Components</h1>
-        <p>Build and manage reusable UI components.</p>
+
+        <p>
+            UI Component Library.
+        </p>
     `,
 
     blueprints: `
         <h1>Blueprints</h1>
-        <p>Explore architecture and project blueprints.</p>
+
+        <p>
+            Architecture Blueprints.
+        </p>
     `,
 
     documentation: `
         <h1>Documentation</h1>
-        <p>Read project documentation.</p>
+
+        <p>
+            Project Documentation.
+        </p>
     `,
 
     settings: `
         <h1>Settings</h1>
-        <p>Configure BD Studio preferences.</p>
+
+        <p>
+            Configure BD Studio.
+        </p>
     `
 
 };
@@ -73,16 +114,15 @@ const repository = [
     {
         name: "apps",
         children: [
-            "bdui-lab",
-            "bduniverse"
+            "bd-studio",
+            "bdui-lab"
         ]
     },
 
     {
         name: "core",
         children: [
-            "bd-kernel",
-            "services"
+            "bd-kernel"
         ]
     },
 
@@ -104,17 +144,7 @@ const repository = [
     },
 
     {
-        name: "knowledge",
-        children: []
-    },
-
-    {
         name: "tests",
-        children: []
-    },
-
-    {
-        name: "tools",
         children: []
     }
 
@@ -123,126 +153,32 @@ const repository = [
 /*
 ======================================
 
-Repository Statistics
+Elements
 
 ======================================
 */
 
-const statistics = {
+const content =
+    document.getElementById("content");
 
-    applications: 2,
-    core: 2,
-    packages: 1,
-    blueprints: 5,
-    status: "Healthy",
-    version: "Alpha 0.7"
+const status =
+    document.getElementById("kernel-status");
 
-};
+const version =
+    document.getElementById("app-version");
 
 /*
 ======================================
 
-Renderer
+Startup
 
 ======================================
 */
 
-const content = document.getElementById("content");
+status.textContent = APP.status;
 
-function show(view) {
-
-    content.innerHTML = views[view];
-
-    if (view === "dashboard") {
-
-        const dashboard = document.getElementById("dashboard");
-
-        dashboard.innerHTML = `
-            <p><strong>Applications:</strong> ${statistics.applications}</p>
-            <p><strong>Core Modules:</strong> ${statistics.core}</p>
-            <p><strong>Packages:</strong> ${statistics.packages}</p>
-            <p><strong>Blueprints:</strong> ${statistics.blueprints}</p>
-            <p><strong>Status:</strong> ${statistics.status}</p>
-            <p><strong>Version:</strong> ${statistics.version}</p>
-        `;
-
-    }
-
-    if (view === "explorer") {
-
-        const tree = document.getElementById("repository-tree");
-
-        repository.forEach(folder => {
-
-            tree.innerHTML += `
-                <div class="folder">
-
-                    <div
-                        class="folder-name"
-                        onclick="toggleFolder('${folder.name}')"
-                        style="cursor:pointer; font-weight:bold; margin:6px 0;">
-
-                        ▶ ${folder.name}
-
-                    </div>
-
-                    <div
-                        id="${folder.name}"
-                        class="children"
-                        style="display:none; margin-left:20px;">
-
-                    </div>
-
-                </div>
-            `;
-
-        });
-
-    }
-
-}
-
-/*
-======================================
-
-Folder Toggle
-
-======================================
-*/
-
-function toggleFolder(name) {
-
-    const folder = repository.find(item => item.name === name);
-
-    const children = document.getElementById(name);
-
-    if (children.style.display === "none") {
-
-        children.style.display = "block";
-
-        children.innerHTML = "";
-
-        folder.children.forEach(child => {
-
-            children.innerHTML += `
-                <div style="margin:4px 0;">
-                    📂 ${child}
-                </div>
-            `;
-
-        });
-
-    } else {
-
-        children.style.display = "none";
-
-        children.innerHTML = "";
-
-    }
-
-}
-
-window.toggleFolder = toggleFolder;
+version.textContent =
+    "v" + APP.version;
 
 /*
 ======================================
@@ -252,15 +188,115 @@ Navigation
 ======================================
 */
 
-const buttons = document.querySelectorAll(".sidebar button");
+const buttons =
+    document.querySelectorAll(".sidebar button");
 
-buttons[0].onclick = () => show("dashboard");
-buttons[1].onclick = () => show("explorer");
-buttons[2].onclick = () => show("packages");
-buttons[3].onclick = () => show("components");
-buttons[4].onclick = () => show("blueprints");
-buttons[5].onclick = () => show("documentation");
-buttons[6].onclick = () => show("settings");
+const pages = [
+
+    "dashboard",
+
+    "explorer",
+
+    "packages",
+
+    "components",
+
+    "blueprints",
+
+    "documentation",
+
+    "settings"
+
+];
+
+buttons.forEach((button,index)=>{
+
+    button.addEventListener("click",()=>{
+
+        buttons.forEach(b=>{
+
+            b.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+        show(pages[index]);
+
+    });
+
+});
+
+/*
+======================================
+
+Render
+
+======================================
+*/
+
+function show(view){
+
+    content.innerHTML =
+        views[view];
+
+    if(view==="explorer"){
+
+        renderRepository();
+
+    }
+
+}
+
+/*
+======================================
+
+Repository
+
+======================================
+*/
+
+function renderRepository(){
+
+    const tree =
+        document.getElementById("repository-tree");
+
+    tree.innerHTML = "";
+
+    repository.forEach(folder=>{
+
+        const details =
+            document.createElement("details");
+
+        const summary =
+            document.createElement("summary");
+
+        summary.textContent =
+            "📂 " + folder.name;
+
+        details.appendChild(summary);
+
+        folder.children.forEach(child=>{
+
+            const div =
+                document.createElement("div");
+
+            div.style.marginLeft="24px";
+
+            div.style.padding="4px 0";
+
+            div.textContent =
+                "📁 " + child;
+
+            details.appendChild(div);
+
+        });
+
+        tree.appendChild(details);
+
+    });
+
+}
 
 /*
 ======================================
@@ -269,5 +305,7 @@ Start
 
 ======================================
 */
+
+buttons[0].classList.add("active");
 
 show("dashboard");
