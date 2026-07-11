@@ -4,7 +4,7 @@
 BD Studio
 Application
 
-Version 0.8.8
+Version 0.9.1
 
 ======================================
 */
@@ -14,10 +14,19 @@ import { views } from "./js/views.js";
 import { initializeNavigation } from "./js/navigation.js";
 import { renderDashboard } from "./js/dashboard.js";
 import { renderExplorer } from "./js/explorer.js";
+import { Kernel } from "./js/kernel.js";
 
 console.clear();
 
-console.log(`${APP.name} ${APP.version}`);
+/*
+======================================
+
+Kernel Startup
+
+======================================
+*/
+
+Kernel.initialize();
 
 /*
 ======================================
@@ -69,6 +78,8 @@ Renderer
 
 function show(view){
 
+    Kernel.setCurrentView(view);
+
     switch(view){
 
         case "dashboard":
@@ -81,7 +92,6 @@ function show(view){
 
         default:
             content.innerHTML = views[view];
-
     }
 
 }
@@ -110,4 +120,4 @@ Start
 
 buttons[0].classList.add("active");
 
-show("dashboard");
+show(Kernel.getCurrentView());
