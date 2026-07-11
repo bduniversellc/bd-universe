@@ -4,7 +4,7 @@
 BD Studio
 Application
 
-Version 1.0.1
+Version 1.0.2
 
 ======================================
 */
@@ -41,15 +41,12 @@ Elements
 */
 
 const content = document.getElementById("content");
-
 const status = document.getElementById("kernel-status");
-
 const version = document.getElementById("app-version");
 
 const buttons = document.querySelectorAll(".sidebar button");
 
 const pages = [
-
     "dashboard",
     "explorer",
     "packages",
@@ -57,7 +54,6 @@ const pages = [
     "blueprints",
     "documentation",
     "settings"
-
 ];
 
 /*
@@ -82,26 +78,21 @@ Renderer
 ======================================
 */
 
-function show(view){
+function show(view) {
 
     Kernel.setCurrentView(view);
 
-    switch(view){
+    switch (view) {
 
         case "dashboard":
-
             content.innerHTML = Kernel.getModule("dashboard")();
-
             break;
 
         case "explorer":
-
             content.innerHTML = Kernel.getModule("explorer")();
-
             break;
 
         default:
-
             content.innerHTML = views[view];
 
     }
@@ -117,13 +108,9 @@ Navigation
 */
 
 Kernel.getModule("navigation")(
-
     buttons,
-
     pages,
-
     show
-
 );
 
 /*
@@ -136,4 +123,4 @@ Start
 
 buttons[0].classList.add("active");
 
-show("dashboard");
+show(Kernel.getCurrentView());
