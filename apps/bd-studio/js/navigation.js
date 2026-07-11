@@ -1,15 +1,32 @@
-🔵 REPLACE
+/*
+======================================
 
-js/navigation.js
+BD Studio
+Navigation Module
 
-🔵 REPLACE
+Version 0.8.5
 
-app.js
+======================================
+*/
 
-⚪ KEEP
+export function initializeNavigation(buttons, pages, show){
 
-index.html
-app.css
-config.js
-repository.js
-views.js
+    buttons.forEach((button, index) => {
+
+        button.addEventListener("click", () => {
+
+            buttons.forEach(b => {
+
+                b.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+            show(pages[index]);
+
+        });
+
+    });
+
+}
