@@ -4,7 +4,7 @@
 BD Studio
 Application
 
-Version 0.9.1
+Version 0.9.3
 
 ======================================
 */
@@ -27,6 +27,18 @@ Kernel Startup
 */
 
 Kernel.initialize();
+
+/*
+======================================
+
+Register Modules
+
+======================================
+*/
+
+Kernel.register("dashboard", renderDashboard);
+Kernel.register("explorer", renderExplorer);
+Kernel.register("navigation", initializeNavigation);
 
 /*
 ======================================
@@ -83,15 +95,16 @@ function show(view){
     switch(view){
 
         case "dashboard":
-            content.innerHTML = renderDashboard();
+            content.innerHTML = Kernel.getModule("dashboard")();
             break;
 
         case "explorer":
-            content.innerHTML = renderExplorer();
+            content.innerHTML = Kernel.getModule("explorer")();
             break;
 
         default:
             content.innerHTML = views[view];
+
     }
 
 }
@@ -104,11 +117,7 @@ Navigation
 ======================================
 */
 
-initializeNavigation(
-    buttons,
-    pages,
-    show
-);
+Kernel.getModule("navigation")(buttons, pages, show);
 
 /*
 ======================================
