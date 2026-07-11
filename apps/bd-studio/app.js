@@ -4,7 +4,7 @@
 BD Studio
 Application
 
-Version 0.8.5
+Version 0.8.6
 
 ======================================
 */
@@ -12,6 +12,7 @@ Version 0.8.5
 import { APP } from "./js/config.js";
 import { views } from "./js/views.js";
 import { initializeNavigation } from "./js/navigation.js";
+import { renderDashboard } from "./js/dashboard.js";
 
 console.clear();
 
@@ -66,6 +67,14 @@ Renderer
 */
 
 function show(view){
+
+    if(view === "dashboard"){
+
+        content.innerHTML = renderDashboard();
+
+        return;
+
+    }
 
     content.innerHTML = views[view];
 
