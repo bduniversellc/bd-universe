@@ -2,9 +2,9 @@
 ======================================
 
 BD Studio
-Professional Theme
+Workspace Theme
 
-Version 0.8.0
+Version 1.0.1
 
 ======================================
 */
@@ -24,7 +24,6 @@ body{
     font-family:
         Inter,
         Arial,
-        Helvetica,
         sans-serif;
 
     background:#111827;
@@ -119,15 +118,15 @@ Sidebar
 
     flex-direction:column;
 
-    padding:20px;
+    gap:8px;
 
-    gap:10px;
+    padding:20px;
 
 }
 
 .sidebar button{
 
-    background:transparent;
+    background:none;
 
     border:none;
 
@@ -142,8 +141,6 @@ Sidebar
     cursor:pointer;
 
     transition:.2s;
-
-    font-size:15px;
 
 }
 
@@ -173,23 +170,9 @@ Content
 
     flex:1;
 
-    padding:32px;
+    display:flex;
 
-    overflow:auto;
-
-}
-
-.content h1{
-
-    margin-bottom:18px;
-
-}
-
-.content p{
-
-    margin-bottom:12px;
-
-    line-height:1.6;
+    overflow:hidden;
 
 }
 
@@ -200,6 +183,20 @@ Explorer
 
 ======================================
 */
+
+.explorer{
+
+    width:320px;
+
+    background:#1f2937;
+
+    border-right:1px solid #374151;
+
+    overflow:auto;
+
+    padding:20px;
+
+}
 
 .folder{
 
@@ -225,9 +222,39 @@ Explorer
 
 .children{
 
-    margin-top:6px;
+    margin-left:20px;
 
-    margin-left:24px;
+}
+
+/*
+======================================
+
+Inspector
+
+======================================
+*/
+
+.inspector{
+
+    flex:1;
+
+    padding:30px;
+
+    overflow:auto;
+
+}
+
+.inspector h2{
+
+    margin-bottom:20px;
+
+}
+
+.inspector p{
+
+    margin-bottom:14px;
+
+    line-height:1.6;
 
 }
 
