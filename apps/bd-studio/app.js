@@ -4,59 +4,17 @@
 BD Studio
 Application
 
-Version 0.8.2
+Version 0.8.4
 
 ======================================
 */
 
 import { APP } from "./js/config.js";
+import { views } from "./js/views.js";
 
 console.clear();
 
 console.log(APP.name + " " + APP.version);
-
-/*
-======================================
-
-Views
-
-======================================
-*/
-
-const views = {
-
-    dashboard: `
-        <h1>Dashboard</h1>
-        <p>Welcome to ${APP.name}</p>
-        <p>Version ${APP.version}</p>
-    `,
-
-    explorer: `
-        <h1>Repository Explorer</h1>
-        <p>Repository module coming in v0.8.3</p>
-    `,
-
-    packages: `
-        <h1>Packages</h1>
-    `,
-
-    components: `
-        <h1>Components</h1>
-    `,
-
-    blueprints: `
-        <h1>Blueprints</h1>
-    `,
-
-    documentation: `
-        <h1>Documentation</h1>
-    `,
-
-    settings: `
-        <h1>Settings</h1>
-    `
-
-};
 
 /*
 ======================================
@@ -114,12 +72,34 @@ buttons.forEach((button, index) => {
 
         button.classList.add("active");
 
-        content.innerHTML = views[pages[index]];
+        show(pages[index]);
 
     });
 
 });
 
+/*
+======================================
+
+Renderer
+
+======================================
+*/
+
+function show(view){
+
+    content.innerHTML = views[view];
+
+}
+
+/*
+======================================
+
+Start
+
+======================================
+*/
+
 buttons[0].classList.add("active");
 
-content.innerHTML = views.dashboard;
+show("dashboard");
