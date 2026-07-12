@@ -4,14 +4,16 @@
 BD Studio
 Explorer Module
 
-Version 1.2.2
+Version 1.2.3
 
 ======================================
 */
 
 import {
 
-    getRepository
+    getRepository,
+    getFolder,
+    getFiles
 
 } from "./repository.js";
 
@@ -25,11 +27,7 @@ export function renderExplorer() {
 
     const repository = getRepository();
 
-    let html = `
-
-        <h2>Explorer</h2>
-
-    `;
+    let html = `<h2>Explorer</h2>`;
 
     repository.forEach(folder => {
 
@@ -52,7 +50,7 @@ export function renderExplorer() {
             html += `
 
                 <div
-                    class="child-item">
+                    class="child-folder">
 
                     📁 ${child}
 
@@ -61,6 +59,29 @@ export function renderExplorer() {
             `;
 
         });
+
+        const files = getFiles(folder.name);
+
+        if(files){
+
+            files.files.forEach(file => {
+
+                html += `
+
+                    <div
+                        class="file-name"
+                        data-folder="${folder.name}"
+                        data-file="${file}">
+
+                        📄 ${file}
+
+                    </div>
+
+                `;
+
+            });
+
+        }
 
         html += `
 
@@ -74,7 +95,7 @@ export function renderExplorer() {
 
 }
 
-export function initializeExplorer() {
+export function initializeExplorer(){
 
     document
         .querySelectorAll(".folder-name")
@@ -82,17 +103,35 @@ export function initializeExplorer() {
 
             item.addEventListener("click", () => {
 
-                const name =
-                    item.dataset.folder;
-
                 const folder =
-                    getRepository().find(
-
-                        f => f.name === name
-
-                    );
+                    getFolder(item.dataset.folder);
 
                 updateInspector(folder);
+
+            });
+
+        });
+
+    document
+        .querySelectorAll(".file-name")
+        .forEach(item => {
+
+            item.addEventListener("click", () => {
+
+                updateInspector({
+
+                    name: item.dataset.file,
+
+                    type: "File",
+
+                    path:
+                        item.dataset.folder +
+                        "/" +
+                        item.dataset.file,
+
+                    children: []
+
+                });
 
             });
 
