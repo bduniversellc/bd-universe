@@ -4,7 +4,7 @@
 BD Studio
 Application
 
-Version 1.2.2
+Version 1.2.4
 
 ======================================
 */
@@ -27,6 +27,10 @@ import {
     renderInspector
 } from "./js/inspector.js";
 
+import {
+    showWelcome
+} from "./js/viewer.js";
+
 /*
 ======================================
 
@@ -40,9 +44,7 @@ console.clear();
 Kernel.initialize();
 
 Kernel.register("dashboard", renderDashboard);
-
 Kernel.register("explorer", renderExplorer);
-
 Kernel.register("navigation", initializeNavigation);
 
 /*
@@ -53,11 +55,11 @@ Elements
 ======================================
 */
 
-const content =
-    document.getElementById("content");
-
 const explorerPanel =
     document.getElementById("explorer-panel");
+
+const viewerPanel =
+    document.getElementById("content");
 
 const inspectorPanel =
     document.getElementById("inspector");
@@ -114,10 +116,13 @@ Panels
 explorerPanel.innerHTML =
     renderExplorer();
 
-initializeExplorer();
+viewerPanel.innerHTML =
+    showWelcome();
 
 inspectorPanel.innerHTML =
     renderInspector();
+
+initializeExplorer();
 
 /*
 ======================================
@@ -135,14 +140,14 @@ function show(view){
 
         case "dashboard":
 
-            content.innerHTML =
+            viewerPanel.innerHTML =
                 renderDashboard();
 
             break;
 
         default:
 
-            content.innerHTML =
+            viewerPanel.innerHTML =
                 views[view];
 
     }
