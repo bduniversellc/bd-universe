@@ -4,90 +4,64 @@
 BD Studio
 Workspace Controller
 
-Version 1.3.4
+Version 1.3.7 STABLE
 
 ======================================
 */
 
 import {
-
     renderExplorer,
     initializeExplorer
-
 } from "./explorer.js";
 
 import {
-
     renderInspector
-
 } from "./inspector.js";
 
 import {
-
-    showWelcome
-
+    showWelcome,
+    showFile
 } from "./viewer.js";
-
-import {
-
-    getTabs
-
-} from "./tabs.js";
 
 export function initializeWorkspace() {
 
-    const explorer =
-        document.getElementById("explorer-panel");
-
-    const viewer =
-        document.getElementById("content");
-
-    const inspector =
-        document.getElementById("inspector");
-
-    explorer.innerHTML =
+    document.getElementById("explorer-panel").innerHTML =
         renderExplorer();
 
-    viewer.innerHTML =
+    document.getElementById("content").innerHTML =
         showWelcome();
 
-    inspector.innerHTML =
+    document.getElementById("inspector").innerHTML =
         renderInspector();
 
     initializeExplorer();
 
 }
 
-export function refreshViewer(view) {
+export function showDashboard(renderDashboard) {
 
-    const viewer =
-        document.getElementById("content");
-
-    viewer.innerHTML = view;
+    document.getElementById("content").innerHTML =
+        renderDashboard();
 
 }
 
-export function refreshTabs() {
+export function showView(html) {
 
-    const tabs =
-        document.querySelector(".tabs");
+    document.getElementById("content").innerHTML =
+        html;
 
-    if(!tabs) return;
+}
 
-    tabs.innerHTML =
-        getTabs()
+export function showInspector(html) {
 
-        .map(tab => `
+    document.getElementById("inspector").innerHTML =
+        html;
 
-            <div
-                class="tab">
+}
 
-                ${tab.name}
+export function showSelectedFile(file) {
 
-            </div>
-
-        `)
-
-        .join("");
+    document.getElementById("content").innerHTML =
+        showFile(file);
 
 }
