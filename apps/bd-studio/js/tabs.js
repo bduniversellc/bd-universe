@@ -4,7 +4,7 @@
 BD Studio
 Tabs Module
 
-Version 1.3.3
+Version 1.3.5
 
 ======================================
 */
@@ -13,9 +13,15 @@ import { State } from "./state.js";
 
 let tabs = [];
 
-export function openTab(file) {
+export function openTab(file){
 
-    if (!tabs.find(tab => tab.path === file.path)) {
+    const exists = tabs.find(
+
+        tab => tab.path === file.path
+
+    );
+
+    if(!exists){
 
         tabs.push(file);
 
@@ -25,13 +31,7 @@ export function openTab(file) {
 
 }
 
-export function getTabs() {
-
-    return tabs;
-
-}
-
-export function closeTab(path) {
+export function closeTab(path){
 
     tabs = tabs.filter(
 
@@ -41,11 +41,29 @@ export function closeTab(path) {
 
 }
 
-export function renderTabs() {
+export function getTabs(){
+
+    return tabs;
+
+}
+
+export function getActiveTab(){
+
+    return State.getFile();
+
+}
+
+export function renderTabs(){
+
+    const active = getActiveTab();
 
     return tabs.map(tab => `
 
-        <div class="tab">
+        <div
+
+            class="tab ${active && active.path === tab.path ? "active" : ""}"
+
+            data-path="${tab.path}">
 
             ${tab.name}
 
