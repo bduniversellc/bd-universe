@@ -4,7 +4,7 @@
 BD Studio
 Explorer Module
 
-Version 1.3.1
+Version 1.3.5
 
 ======================================
 */
@@ -28,6 +28,25 @@ import {
     State
 
 } from "./state.js";
+
+import {
+
+    openTab
+
+} from "./tabs.js";
+
+import {
+
+    showFile
+
+} from "./viewer.js";
+
+import {
+
+    refreshViewer,
+    refreshTabs
+
+} from "./workspace.js";
 
 export function renderExplorer() {
 
@@ -67,15 +86,18 @@ export function renderExplorer() {
 
         const files = getFiles(folder.name);
 
-        if (files) {
+        if(files){
 
             files.files.forEach(file => {
 
                 html += `
 
                     <div
+
                         class="file-name"
+
                         data-folder="${folder.name}"
+
                         data-file="${file}">
 
                         📄 ${file}
@@ -100,16 +122,23 @@ export function renderExplorer() {
 
 }
 
-export function initializeExplorer() {
+export function initializeExplorer(){
 
     document
+
         .querySelectorAll(".folder-name")
+
         .forEach(item => {
 
             item.addEventListener("click", () => {
 
                 const folder =
-                    getFolder(item.dataset.folder);
+
+                    getFolder(
+
+                        item.dataset.folder
+
+                    );
 
                 State.selectFolder(folder);
 
@@ -122,7 +151,9 @@ export function initializeExplorer() {
         });
 
     document
+
         .querySelectorAll(".file-name")
+
         .forEach(item => {
 
             item.addEventListener("click", () => {
@@ -134,9 +165,13 @@ export function initializeExplorer() {
                     type: "File",
 
                     path:
+
                         "/" +
+
                         item.dataset.folder +
+
                         "/" +
+
                         item.dataset.file,
 
                     children: []
@@ -145,7 +180,17 @@ export function initializeExplorer() {
 
                 State.selectFile(file);
 
+                openTab(file);
+
                 updateInspector(file);
+
+                refreshViewer(
+
+                    showFile(file)
+
+                );
+
+                refreshTabs();
 
             });
 
