@@ -4,10 +4,12 @@
 BD Studio
 Repository Module
 
-Version 1.0.2
+Version 1.2.3
 
 ======================================
 */
+
+import { getFileSystem } from "./file-system.js";
 
 export const repository = [
 
@@ -93,17 +95,29 @@ Repository API
 ======================================
 */
 
-export function getRepository() {
+export function getRepository(){
 
     return repository;
 
 }
 
-export function getFolder(name) {
+export function getFolder(name){
 
     return repository.find(
 
         folder => folder.name === name
+
+    );
+
+}
+
+export function getFiles(folder){
+
+    const system = getFileSystem();
+
+    return system.find(
+
+        item => item.folder === folder
 
     );
 
