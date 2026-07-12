@@ -1,157 +1,54 @@
 /*
 ======================================
 
-BD Studio
-Workspace Theme
+Workspace Tabs
 
-Version 1.2.0
-
-======================================
-*/
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-body{
-
-    font-family:
-        Inter,
-        Arial,
-        sans-serif;
-
-    background:#111827;
-
-    color:#f3f4f6;
-
-    height:100vh;
-
-    display:grid;
-
-    grid-template-rows:56px 1fr 32px;
-
-}
-
-/*
-======================================
-
-Top Bar
+Version 1.3.4
 
 ======================================
 */
 
-.topbar{
+.tabs{
 
     display:flex;
 
     align-items:center;
 
-    justify-content:space-between;
+    gap:2px;
 
-    padding:0 20px;
+    padding:8px;
 
-    background:#1f2937;
+    background:#161f2b;
 
     border-bottom:1px solid #374151;
 
 }
 
-.logo{
-
-    font-size:18px;
-
-    font-weight:700;
-
-}
-
-.version{
-
-    color:#9ca3af;
-
-    font-size:14px;
-
-}
-
-/*
-======================================
-
-Workspace
-
-======================================
-*/
-
-.workspace{
-
-    display:grid;
-
-    grid-template-columns:
-
-        220px
-        320px
-        1fr
-        300px;
-
-    overflow:hidden;
-
-}
-
-/*
-======================================
-
-Sidebar
-
-======================================
-*/
-
-.sidebar{
+.tab{
 
     background:#1f2937;
 
-    border-right:1px solid #374151;
-
-    padding:16px;
-
-    overflow:auto;
-
-}
-
-.sidebar button{
-
-    width:100%;
-
-    border:none;
-
-    background:none;
-
     color:#d1d5db;
 
-    text-align:left;
+    padding:8px 14px;
 
-    padding:12px;
-
-    border-radius:8px;
+    border-radius:6px 6px 0 0;
 
     cursor:pointer;
 
-    margin-bottom:6px;
+    user-select:none;
 
     transition:.2s;
 
 }
 
-.sidebar button:hover{
+.tab:hover{
 
     background:#374151;
 
 }
 
-.sidebar button.active{
+.tab.active{
 
     background:#2563eb;
 
@@ -159,142 +56,8 @@ Sidebar
 
 }
 
-/*
-======================================
-
-Explorer
-
-======================================
-*/
-
-.explorer{
-
-    background:#161f2b;
-
-    border-right:1px solid #374151;
-
-    overflow:auto;
-
-    padding:20px;
-
-}
-
-/*
-======================================
-
-Viewer
-
-======================================
-*/
-
-.content{
-
-    background:#0f172a;
-
-    overflow:auto;
+.viewer{
 
     padding:24px;
-
-}
-
-/*
-======================================
-
-Inspector
-
-======================================
-*/
-
-.inspector{
-
-    background:#161f2b;
-
-    border-left:1px solid #374151;
-
-    overflow:auto;
-
-    padding:20px;
-
-}
-
-/*
-======================================
-
-Cards
-
-======================================
-*/
-
-.card{
-
-    background:#1f2937;
-
-    border:1px solid #374151;
-
-    border-radius:10px;
-
-    padding:16px;
-
-    margin-bottom:16px;
-
-}
-
-/*
-======================================
-
-Headings
-
-======================================
-*/
-
-h1{
-
-    font-size:28px;
-
-    margin-bottom:18px;
-
-}
-
-h2{
-
-    font-size:18px;
-
-    margin-bottom:14px;
-
-}
-
-p{
-
-    line-height:1.7;
-
-    margin-bottom:10px;
-
-}
-
-/*
-======================================
-
-Status Bar
-
-======================================
-*/
-
-.statusbar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 16px;
-
-    background:#1f2937;
-
-    border-top:1px solid #374151;
-
-    font-size:13px;
-
-    color:#9ca3af;
 
 }
