@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -19,9 +20,9 @@
 
 <body>
 
-    <!-- ======================================
-         Header
-    ======================================= -->
+    <!-- ====================================== -->
+    <!-- Top Bar                               -->
+    <!-- ====================================== -->
 
     <header class="topbar">
 
@@ -35,17 +36,15 @@
             class="version"
             id="app-version">
 
-            v0.8.0
-
         </div>
 
     </header>
 
-    <!-- ======================================
-         Workspace
-    ======================================= -->
+    <!-- ====================================== -->
+    <!-- Workspace                              -->
+    <!-- ====================================== -->
 
-    <div class="workspace">
+    <main class="workspace">
 
         <!-- Sidebar -->
 
@@ -67,33 +66,63 @@
 
         </aside>
 
-        <!-- Content -->
+        <!-- Explorer -->
 
-        <main
-            class="content"
-            id="content">
+        <section
+            id="explorer-panel"
+            class="explorer">
 
-        </main>
+            <h2>Explorer</h2>
 
-    </div>
+        </section>
 
-    <!-- ======================================
-         Status Bar
-    ======================================= -->
+        <!-- Viewer -->
+
+        <section
+            id="content"
+            class="content">
+
+        </section>
+
+        <!-- Inspector -->
+
+        <aside
+            id="inspector"
+            class="inspector">
+
+            <h2>Inspector</h2>
+
+            <p>Select an item.</p>
+
+        </aside>
+
+    </main>
+
+    <!-- ====================================== -->
+    <!-- Status Bar                             -->
+    <!-- ====================================== -->
 
     <footer class="statusbar">
 
-        <span id="kernel-status">
+        <div id="kernel-status">
 
-            Kernel: Starting...
+            Kernel: Loading...
 
-        </span>
+        </div>
+
+        <div>
+
+            BD Universe
+
+        </div>
 
     </footer>
 
     <script
         type="module"
-        src="./app.js"></script>
+        src="./app.js">
+
+    </script>
 
 </body>
 
