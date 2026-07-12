@@ -4,7 +4,7 @@
 BD Studio
 Explorer Module
 
-Version 1.2.3
+Version 1.3.1
 
 ======================================
 */
@@ -22,6 +22,12 @@ import {
     updateInspector
 
 } from "./inspector.js";
+
+import {
+
+    State
+
+} from "./state.js";
 
 export function renderExplorer() {
 
@@ -49,8 +55,7 @@ export function renderExplorer() {
 
             html += `
 
-                <div
-                    class="child-folder">
+                <div class="child-folder">
 
                     📁 ${child}
 
@@ -62,7 +67,7 @@ export function renderExplorer() {
 
         const files = getFiles(folder.name);
 
-        if(files){
+        if (files) {
 
             files.files.forEach(file => {
 
@@ -95,7 +100,7 @@ export function renderExplorer() {
 
 }
 
-export function initializeExplorer(){
+export function initializeExplorer() {
 
     document
         .querySelectorAll(".folder-name")
@@ -105,6 +110,10 @@ export function initializeExplorer(){
 
                 const folder =
                     getFolder(item.dataset.folder);
+
+                State.selectFolder(folder);
+
+                State.selectFile(null);
 
                 updateInspector(folder);
 
@@ -118,20 +127,25 @@ export function initializeExplorer(){
 
             item.addEventListener("click", () => {
 
-                updateInspector({
+                const file = {
 
                     name: item.dataset.file,
 
                     type: "File",
 
                     path:
+                        "/" +
                         item.dataset.folder +
                         "/" +
                         item.dataset.file,
 
                     children: []
 
-                });
+                };
+
+                State.selectFile(file);
+
+                updateInspector(file);
 
             });
 
