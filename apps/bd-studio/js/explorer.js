@@ -4,17 +4,22 @@
 BD Studio
 Explorer Module
 
-Version 1.0.2
+Version 1.2.2
 
 ======================================
 */
 
 import {
 
-    getRepository,
-    getFolder
+    getRepository
 
 } from "./repository.js";
+
+import {
+
+    updateInspector
+
+} from "./inspector.js";
 
 export function renderExplorer() {
 
@@ -22,9 +27,7 @@ export function renderExplorer() {
 
     let html = `
 
-        <div class="explorer">
-
-            <h2>Repository</h2>
+        <h2>Explorer</h2>
 
     `;
 
@@ -35,7 +38,8 @@ export function renderExplorer() {
             <details open>
 
                 <summary
-                    onclick="selectFolder('${folder.name}')">
+                    class="folder-name"
+                    data-folder="${folder.name}">
 
                     📂 ${folder.name}
 
@@ -48,10 +52,7 @@ export function renderExplorer() {
             html += `
 
                 <div
-                    style="
-                        margin-left:20px;
-                        padding:6px 0;
-                    ">
+                    class="child-item">
 
                     📁 ${child}
 
@@ -69,45 +70,32 @@ export function renderExplorer() {
 
     });
 
-    html += `
-
-        </div>
-
-        <div
-            class="inspector"
-            id="inspector">
-
-            <h2>Inspector</h2>
-
-            <p>Select a folder.</p>
-
-        </div>
-
-    `;
-
     return html;
 
 }
 
-window.selectFolder = function(name){
+export function initializeExplorer() {
 
-    const folder = getFolder(name);
+    document
+        .querySelectorAll(".folder-name")
+        .forEach(item => {
 
-    const inspector =
-        document.getElementById("inspector");
+            item.addEventListener("click", () => {
 
-    inspector.innerHTML = `
+                const name =
+                    item.dataset.folder;
 
-        <h2>Inspector</h2>
+                const folder =
+                    getRepository().find(
 
-        <p><strong>Name:</strong> ${folder.name}</p>
+                        f => f.name === name
 
-        <p><strong>Type:</strong> ${folder.type}</p>
+                    );
 
-        <p><strong>Path:</strong> ${folder.path}</p>
+                updateInspector(folder);
 
-        <p><strong>Children:</strong> ${folder.children.length}</p>
+            });
 
-    `;
+        });
 
-};
+}
