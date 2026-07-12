@@ -2,34 +2,21 @@
 ======================================
 
 BD Studio
-Application
+Application Bootstrap
 
-Version 1.2.4
+Version 1.2.6
 
 ======================================
 */
 
 import { APP } from "./js/config.js";
-import { views } from "./js/views.js";
-
 import { Kernel } from "./js/kernel.js";
 
 import { initializeNavigation } from "./js/navigation.js";
+import { initializeWorkspace } from "./js/workspace.js";
 
 import { renderDashboard } from "./js/dashboard.js";
-
-import {
-    renderExplorer,
-    initializeExplorer
-} from "./js/explorer.js";
-
-import {
-    renderInspector
-} from "./js/inspector.js";
-
-import {
-    showWelcome
-} from "./js/viewer.js";
+import { renderExplorer } from "./js/explorer.js";
 
 /*
 ======================================
@@ -50,109 +37,28 @@ Kernel.register("navigation", initializeNavigation);
 /*
 ======================================
 
-Elements
-
-======================================
-*/
-
-const explorerPanel =
-    document.getElementById("explorer-panel");
-
-const viewerPanel =
-    document.getElementById("content");
-
-const inspectorPanel =
-    document.getElementById("inspector");
-
-const status =
-    document.getElementById("kernel-status");
-
-const version =
-    document.getElementById("app-version");
-
-const buttons =
-    document.querySelectorAll(".sidebar button");
-
-const pages = [
-
-    "dashboard",
-
-    "explorer",
-
-    "packages",
-
-    "components",
-
-    "blueprints",
-
-    "documentation",
-
-    "settings"
-
-];
-
-/*
-======================================
-
-Startup
+Application
 
 ======================================
 */
 
 document.title = APP.name;
 
-version.textContent = "v" + APP.version;
+document.getElementById("app-version").textContent =
+    "v" + APP.version;
 
-status.textContent = APP.kernelStatus;
-
-/*
-======================================
-
-Panels
-
-======================================
-*/
-
-explorerPanel.innerHTML =
-    renderExplorer();
-
-viewerPanel.innerHTML =
-    showWelcome();
-
-inspectorPanel.innerHTML =
-    renderInspector();
-
-initializeExplorer();
+document.getElementById("kernel-status").textContent =
+    APP.kernelStatus;
 
 /*
 ======================================
 
-Renderer
+Workspace
 
 ======================================
 */
 
-function show(view){
-
-    Kernel.setCurrentView(view);
-
-    switch(view){
-
-        case "dashboard":
-
-            viewerPanel.innerHTML =
-                renderDashboard();
-
-            break;
-
-        default:
-
-            viewerPanel.innerHTML =
-                views[view];
-
-    }
-
-}
+initializeWorkspace();
 
 /*
 ======================================
@@ -162,13 +68,32 @@ Navigation
 ======================================
 */
 
+const buttons =
+    document.querySelectorAll(".sidebar button");
+
+const pages = [
+
+    "dashboard",
+    "explorer",
+    "packages",
+    "components",
+    "blueprints",
+    "documentation",
+    "settings"
+
+];
+
 initializeNavigation(
 
     buttons,
 
     pages,
 
-    show
+    view => {
+
+        Kernel.setCurrentView(view);
+
+    }
 
 );
 
@@ -181,5 +106,3 @@ Start
 */
 
 buttons[0].classList.add("active");
-
-show("dashboard");
