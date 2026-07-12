@@ -4,14 +4,22 @@
 BD Studio
 Viewer Module
 
-Version 1.2.4
+Version 1.3.4
 
 ======================================
 */
 
-export function renderViewer(title, content) {
+import { renderTabs } from "./tabs.js";
+
+function createViewer(title, content) {
 
     return `
+
+        <div class="tabs">
+
+            ${renderTabs()}
+
+        </div>
 
         <div class="viewer">
 
@@ -31,9 +39,15 @@ ${content}
 
 }
 
+export function renderViewer(title, content) {
+
+    return createViewer(title, content);
+
+}
+
 export function showWelcome() {
 
-    return renderViewer(
+    return createViewer(
 
         "Welcome",
 
@@ -41,9 +55,9 @@ export function showWelcome() {
 
 The development workspace for BD Universe.
 
-Select a file from the Explorer to view its contents.
+Select a file from the Explorer.
 
-Version: 1.2.4`
+Version 1.3.4`
 
     );
 
@@ -51,15 +65,15 @@ Version: 1.2.4`
 
 export function showFile(file) {
 
-    return renderViewer(
+    return createViewer(
 
         file.name,
 
-`File: ${file.name}
+`Name : ${file.name}
 
-Path: ${file.path}
+Path : ${file.path}
 
-Type: ${file.type}
+Type : ${file.type}
 
 Preview support coming soon...`
 
